@@ -1,0 +1,10 @@
+.footer-component {
+  background-color: #b8b8b8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto Regular', sans-serif;
+  font-style: italic;
+  font-weight: 500;
+  padding: 8px;
+}

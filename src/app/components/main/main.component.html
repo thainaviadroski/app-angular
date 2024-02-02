@@ -1,0 +1,35 @@
+<main class="main-component">
+	<form action="" class="frm-component">
+		<div class="row">
+			<div class="frm-input">
+				<label class="label-element">RA:</label>
+				<input type="text" class="input-element" name="" id="ra">
+			</div>
+			<div class="frm-input">
+				<label class="label-element">Nome Completo:</label>
+				<input type="text" class="input-element" name="" id="fullName">
+			</div>
+		</div>
+		<div class="row">
+			<div class="frm-input">
+				<label class="label-element">E-mail:</label>
+				<input type="email" class="input-element" name="" id="">
+			</div>
+			<div class="frm-input">
+				<label class="label-element">Fone:</label>
+				<input type="text" class="input-element" name="" id="">
+			</div>
+		</div>
+		<div class="frm-input">
+			<label class="label-element">Curso:</label>
+			<select name="" id="" class="select-element">
+				<option value="" *ngFor="let curso of cursos; index as id;">{{curso.nome}}</option>
+			</select>
+		</div>
+
+		<div class="frm-input">
+			<label class="label-element"></label>
+			<input type="text" class="input-element" name="" id="">
+		</div>
+	</form>
+</main>
