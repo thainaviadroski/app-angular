@@ -2,16 +2,19 @@ import { Component } from '@angular/core';
 
 import { Applicant } from '../../models/Applicant';
 import { CommonModule } from '@angular/common';
+import { FoneInputComponent } from '../fone-input/fone-input.component';
 
 @Component({
 	selector: 'app-main',
 	standalone: true,
-	imports: [CommonModule],
+	imports: [CommonModule,FoneInputComponent],
 	templateUrl: './main.component.html',
 	styleUrl: './main.component.css',
 })
 export class MainComponent {
 	//public a: Applicant = new Applicant();
+
+	label:String = "fone";
 
 	public cursos = [
 		{

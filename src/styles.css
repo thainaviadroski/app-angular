@@ -1,7 +1,55 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400&display=swap');
 
 * {
-  padding: 0px;
-  margin: 0px;
-  box-sizing: border-box;
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+}
+
+
+.row {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.col {
+	width: 10%;
+}
+
+.col-2 {
+	width: 20%;
+}
+
+.col-3 {
+	width: 30%;
+}
+
+.col-4 {
+	width: 40%;
+}
+
+.col-5 {
+	width: 50%;
+}
+
+.col-6 {
+	width: 60%;
+}
+
+.col-7 {
+	width: 70%;
+}
+
+.col-8 {
+	width: 80%;
+}
+
+.col-9 {
+	width: 90%;
+}
+
+.col-10 {
+	width: 100%;
 }
