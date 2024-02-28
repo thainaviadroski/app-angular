@@ -1,0 +1,30 @@
+[
+	{
+		"id": 1,
+		"servico": "Declaração de Matricula",
+		"qtd": 1,
+		"vlr": 8.00,
+		"multi": false
+	},
+	{
+		"id": 2,
+		"servico": "Declaração de Meio Passe",
+		"qtd": 1,
+		"vlr": 8.00,
+		"multi": false
+	},
+	{
+		"id": 3,
+		"servico": "Abono de Faltas",
+		"qtd": 1,
+		"vlr": 0,
+		"multi": false
+	},
+	{
+		"id": 4,
+		"servico": "Plano de Ensino",
+		"qtd": 1,
+		"vlr": 10.00,
+		"multi": true
+	}
+]

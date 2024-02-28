@@ -1,0 +1,42 @@
+[
+	{
+		"id": 1,
+		"nome": "Ciência da Computação",
+		"modalidade": "PRESENCIAL"
+	},
+	{
+		"id": 2,
+		"nome": "Engenharia Mecânica",
+		"modalidade": "PRESENCIAL"
+	},
+	{
+		"id": 3,
+		"nome": "Medicina",
+		"modalidade": "PRESENCIAL"
+	},
+	{
+		"id": 4,
+		"nome": "Direito",
+		"modalidade": "PRESENCIAL"
+	},
+	{
+		"id": 5,
+		"nome": "Administração - EAD",
+		"modalidade": "EAD"
+	},
+	{
+		"id": 6,
+		"nome": "Ciêncais Contabies - EAD",
+		"modalidade": "EAD"
+	},
+	{
+		"id": 7,
+		"nome": "Piscologia",
+		"modalidade": "PRESENCIAL"
+	},
+	{
+		"id": 8,
+		"nome": "Gestão Comercial - EAD",
+		"modalidade": "EAD"
+	}
+]

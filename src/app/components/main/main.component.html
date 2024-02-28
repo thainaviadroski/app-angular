@@ -1,7 +1,7 @@
 <main class="main-component">
-	<form action="" class="frm-component">
+	<form class="frm-component" [formGroup]="formProtocolo" (submit)="newProtocolo()">
 		<div class="row">
-			<div class="col-2">
+			<div class="col-1">
 				<div class="frm-input ">
 					<label class="label-element">RA:</label>
 					<input type="text" class="input-element" name="" id="ra">
@@ -17,34 +17,65 @@
 		<div class="row">
 			<div class="col-8">
 				<div class="frm-input">
-					<label class="label-element">E-mail:</label>
+					<label class="label-element">E-mail: </label>
 					<input type="email" class="input-element" name="" id="">
 				</div>
 			</div>
 			<div class="col-3">
 				<div class="frm-input">
 					<label class="label-element">Fone:</label>
-					<app-fone-input [fala]="'Assunto'"></app-fone-input>
+					<input type="text" class="input-element" name="" id="">
 				</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="frm-input">
+				<label class="label-element">Modalidade:</label>
+				<select name="" id="" class="select-element" (change)="loadCursos()" formControlName="modalidade">
+					<option value="" *ngFor="let m of modalidade; index as id;" [ngValue]="m">{{m}}</option>
+				</select>
+			</div>
+			<div class="frm-input" *ngIf="cursos.length != 0">
 				<label class="label-element">Curso:</label>
 				<select name="" id="" class="select-element">
 					<option value="" *ngFor="let curso of cursos; index as id;">{{curso.nome}}</option>
 				</select>
 			</div>
 			<div class="frm-input">
+				<label class="label-element">Turno:</label>
+				<select name="" id="" class="select-element">
+					<option *ngFor="let t of turno; index as id;" [ngValue]="t">{{t}}</option>
+				</select>
+			</div>
+			<div class="frm-input">
 				<label class="label-element">Turma:</label>
 				<input type="text" class="input-element" name="" id="">
 			</div>
+
 			<div class="frm-input">
 				<label class="label-element">Serie:</label>
 				<input type="text" class="input-element" name="" id="">
 			</div>
-
 		</div>
-
+		<div class="row">
+			<div class="frm-input">
+				<label class="label-element">Serviço:</label>
+				<select name="" id="" class="select-element" formControlName="servicoSelecionado"
+					(change)="isMultiOrNot()">
+					<option *ngFor="let s of servicos; index as id;" [ngValue]="s">{{s.servico}} - R${{s.vlr | number:
+						'1.1-2'}} </option>
+				</select>
+			</div>
+			<div class="frm-input" *ngIf="isMulti == true">
+				<label class="label-element">Qtd:</label>
+				<input type="number" class="input-element" name="" id="" min="1">
+				<small>Informe o numero de planos de ensino que deseja solicitar</small>
+			</div>
+		</div>
+		<div class="row">
+			<button type="button" class="btn btn-send">
+				Enviar
+			</button>
+		</div>
 	</form>
 </main>
