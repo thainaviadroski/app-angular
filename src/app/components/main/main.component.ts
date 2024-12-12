@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
-
-import { Applicant } from '../../models/Applicant';
 import { CommonModule } from '@angular/common';
-
-import { FoneInputComponent } from '../fone-input/fone-input.component';
 import {
 	FormBuilder,
 	FormGroup,
@@ -20,16 +16,9 @@ import Servicos from '../../../assets/dataServicos.json';
 	standalone: true,
 	templateUrl: './main.component.html',
 	styleUrl: './main.component.css',
-	imports: [
-		CommonModule,
-		FoneInputComponent,
-		ReactiveFormsModule,
-		FormsModule,
-	],
+	imports: [CommonModule, ReactiveFormsModule, FormsModule],
 })
 export class MainComponent {
-	//public a: Applicant = new Applicant();
-
 	public formProtocolo: FormGroup;
 
 	private CursosJson = Cursos;
@@ -38,20 +27,26 @@ export class MainComponent {
 	public turno = ['Matutino', 'Noturno'];
 	public modalidade = ['PRESENCIAL', 'EAD', 'HIBRIDO'];
 
-	public isMulti = false;
+	public isMulti: boolean = false;
+	public isObs: boolean = false;
 
 	constructor(private fb: FormBuilder) {
 		this.formProtocolo = this.fb.group({
 			modalidade: ['', Validators.compose([Validators.required])],
 			ra: ['', Validators.compose([Validators.required])],
 			nome: ['', Validators.compose([Validators.required])],
+			email: ['', Validators.compose([Validators.required])],
+			fone: ['', Validators.compose([Validators.required])],
 			curso: ['', Validators.compose([Validators.required])],
+			turma: ['', Validators.compose([Validators.required])],
+			serie: ['', Validators.compose([Validators.required])],
+			turno: ['', Validators.compose([Validators.required])],
 			servicoSelecionado: ['', Validators.compose([Validators.required])],
 		});
 	}
 
 	newProtocolo() {
-		console.log('Novo protocolo');
+		console.info(this.formProtocolo.value);
 	}
 
 	loadCursos() {
@@ -72,6 +67,13 @@ export class MainComponent {
 		if (data.servicoSelecionado.multi == false) {
 			this.isMulti = false;
 		}
+
+		if (data.servicoSelecionado.obs == true) {
+			this.isObs = true;
+		}
+		if (data.servicoSelecionado.obs == false) {
+			this.isObs = false;
+		}
 	}
 
 	getListCursos(modalidade: String) {
@@ -81,4 +83,18 @@ export class MainComponent {
 			}
 		});
 	}
+
+	// parserObjectJsToObjetcClass(data : any) : Applicant {
+	// 	return a : Applicant = new Applicant(
+	// 		data.ra,
+	// 		data.nome,
+	// 		data.curso,
+	// 		data.modalidade,
+
+	// 		data.serie,
+	// 		data.servicoSelecionado,
+	// 		data.turma,
+	// 		data.turno
+	// 	);
+	// }
 }

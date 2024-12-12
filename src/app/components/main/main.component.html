@@ -4,7 +4,7 @@
 			<div class="col-1">
 				<div class="frm-input ">
 					<label class="label-element">RA:</label>
-					<input type="text" class="input-element" name="" id="ra">
+					<input type="text" class="input-element invalid-input" name="" id="ra" formControlName="ra">
 				</div>
 			</div>
 			<div class="col-9">
@@ -29,16 +29,16 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="frm-input">
-				<label class="label-element">Modalidade:</label>
-				<select name="" id="" class="select-element" (change)="loadCursos()" formControlName="modalidade">
-					<option value="" *ngFor="let m of modalidade; index as id;" [ngValue]="m">{{m}}</option>
-				</select>
-			</div>
 			<div class="frm-input" *ngIf="cursos.length != 0">
 				<label class="label-element">Curso:</label>
 				<select name="" id="" class="select-element">
 					<option value="" *ngFor="let curso of cursos; index as id;">{{curso.nome}}</option>
+				</select>
+			</div>
+			<div class="frm-input">
+				<label class="label-element">Modalidade:</label>
+				<select name="" id="" class="select-element" (change)="loadCursos()" formControlName="modalidade">
+					<option value="" *ngFor="let m of modalidade; index as id;" [ngValue]="m">{{m}}</option>
 				</select>
 			</div>
 			<div class="frm-input">
@@ -66,6 +66,13 @@
 						'1.1-2'}} </option>
 				</select>
 			</div>
+		</div>
+		<div class="row">
+			<div class="frm-input" *ngIf="isObs == true">
+				<label class="label-element">Obs:</label>
+				<textarea name="" id="" class="text-area-element"></textarea>
+				<small>Explique de forma breve o motivo de se cancelamento</small>
+			</div>
 			<div class="frm-input" *ngIf="isMulti == true">
 				<label class="label-element">Qtd:</label>
 				<input type="number" class="input-element" name="" id="" min="1">
@@ -73,7 +80,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<button type="button" class="btn btn-send">
+			<button type="submit" class="btn btn-send">
 				Enviar
 			</button>
 		</div>

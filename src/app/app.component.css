@@ -1,4 +1,21 @@
+.bg-img {
+	background-image: url("https://images.pexels.com/photos/2881370/pexels-photo-2881370.jpeg?cs=srgb&dl=pexels-kelly-1179532-2881370.jpg&fm=jpg&_gl=1*1xrsle7*_ga*MTQ2MTUwNzE4Ni4xNzE0OTM1Mzc5*_ga_8JE65Q40S6*MTcxNDkzNTM3OC4xLjEuMTcxNDkzNTQyNS4wLjAuMA..");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	filter: blur(3px);
+	height: 100vh;
+	width: 100vw;
+}
+
 .body {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 2;
+	background: transparent;
+	z-index: 10;
 	height: 100vh;
 	width: 100vw;
 	display: flex;
